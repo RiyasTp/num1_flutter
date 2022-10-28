@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class Game {
   int _tries = 0;
   bool _won = false;
@@ -47,5 +49,22 @@ class Game {
     var digits = List.generate(10, (i) => i);
     digits.shuffle();
     _num1 = digits.sublist(0, 3).join();
+  }
+
+  String getRandomInt(int length) {
+    if (length < 3) length = 3;
+    if (length > 5) length = 5;
+
+    Random rnd = Random();
+    int r = rnd.nextInt(1000);
+    return intToWord(r, length);
+  }
+
+  String intToWord(int num, int length) {
+    String s = num.toString();
+    while (s.length < length) {
+      s = "0$s";
+    }
+    return s;
   }
 }
