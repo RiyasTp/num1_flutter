@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'features/game/widgets/game_result_validation_widget.dart';
+
 class Game {
   static int tries = 0;
   static bool won = false;
@@ -64,31 +66,9 @@ class Game {
       }
     }
 
-    result = RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(children: [
-          TextSpan(
-              text: '$correctPlace',
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 0, 158, 34))),
-          const TextSpan(
-              text: ' numbers are correct and well placed \n',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 172, 172, 172))),
-          TextSpan(
-              text: '$wrongPlace',
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 255, 158, 12))),
-          const TextSpan(
-              text: '  numbers are correct but wrongly placed',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 172, 172, 172))),
-        ]));
+    result = ResultValidatonWidget(correctPlace: correctPlace, wrongPlace: wrongPlace);
 
     return result;
   }
 }
+

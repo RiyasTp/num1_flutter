@@ -23,9 +23,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context = context;
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GamePlayScreen(),  
+      home: GamePlayScreen(), 
     );
   }
 }

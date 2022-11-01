@@ -18,7 +18,7 @@ class ResultScreen extends StatelessWidget {
         itemCount: 5,
         itemBuilder: (BuildContext context, int index) {
           return NumberBlocks(
-            newNumber: playedNumbers[index],
+            number: playedNumbers[index],
             isActive: Game.tries - 1 == index ? true : false,
             validations: positons[index],
           );

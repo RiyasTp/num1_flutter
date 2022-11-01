@@ -5,21 +5,26 @@ class GameServices {
   final int _length = 3;
   final Game _game = Game();
 
-  resetGame() {
-    _game.clear();
+  void resetGame() {
+    _game.clear();  
   }
+
+ bool get isInGame{
+    return _game.isInGame;
+  }
+
 
   Result getResult(String value) {
     int wrongPlace = 0;
     int correctPlace = 0;
     String num1 = _game.num;
-    if (value == num1) {
+    if (value == num1 || _game.isGameWon) {
       _game.makeGameWin();
-      return Result(status: "won", number: num1);
+      return Result(playedNumber: value, status: "won", number: num1);
     }
     _game.incrementTries();
     if (!_game.isInGame) {
-      return Result(status: "lost", number: num1);
+      return Result(playedNumber: value, status: "lost", number: num1);
     }
 
     for (var i = 0; i < _length; i++) {
@@ -33,6 +38,7 @@ class GameServices {
     }
 
     return Result(
+      playedNumber: value,
       status: "inGame",
       wrongPlace: wrongPlace,
       correctPlace: correctPlace,

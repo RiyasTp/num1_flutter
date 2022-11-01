@@ -1,10 +1,12 @@
 class Result {
   final String status;
+  final String playedNumber;
   final String? number;
   final int wrongPlace;
   final int correctPlace;
 
   Result({
+    required this.playedNumber,
     required this.status,
     this.number,
     this.wrongPlace = 0,
@@ -13,8 +15,8 @@ class Result {
 
   @override
   String toString() {
-    return 'status: $status, \n number :${number ?? {
+    return 'you entered $playedNumber \nstatus: $status, \nnumber :${number ?? {
           'unknown'
-        }} \n wrongPlace: $wrongPlace , \n correctPlace: $correctPlace ';
+        }} \nwrongPlace: $wrongPlace , \ncorrectPlace: $correctPlace ';
   }
 }

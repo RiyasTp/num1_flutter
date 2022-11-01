@@ -6,9 +6,15 @@ class Game {
   bool _inGame = true;
   final int _maxTries = 5;
   late String _num1;
+
   Game() {
-    getRandomNum();
+    _getRandomNum();
   }
+
+  Game.repeatedNum({int length = 3}) {
+    _getRandomInt(length);
+  }
+
   bool get isInGame {
     if (_tries < _maxTries) {
       return _inGame;
@@ -18,6 +24,7 @@ class Game {
   }
 
   void incrementTries() {
+    print(_tries);
     _tries++;
   }
 
@@ -33,7 +40,7 @@ class Game {
     _tries = 0;
     _won = false;
     _inGame = true;
-    getRandomNum();
+    _getRandomNum();
   }
 
   makeGameWin() {
@@ -45,22 +52,23 @@ class Game {
     _inGame = false;
   }
 
-  getRandomNum() {
+  void _getRandomNum() {
     var digits = List.generate(10, (i) => i);
     digits.shuffle();
     _num1 = digits.sublist(0, 3).join();
+    print(_num1);
   }
 
-  String getRandomInt(int length) {
+  String _getRandomInt(int length) {
     if (length < 3) length = 3;
     if (length > 5) length = 5;
 
     Random rnd = Random();
     int r = rnd.nextInt(1000);
-    return intToWord(r, length);
+    return _intToWord(r, length);
   }
 
-  String intToWord(int num, int length) {
+  String _intToWord(int num, int length) {
     String s = num.toString();
     while (s.length < length) {
       s = "0$s";

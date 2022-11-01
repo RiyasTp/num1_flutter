@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
                 itemCount: Game.tries + 1,
                 itemBuilder: (BuildContext context, int index) {
                   return NumberBlocks(
-                    newNumber: playedNumbers.value[index],
+                    number: playedNumbers.value[index],
                     isActive: Game.tries == index ? true : false,
                     validations: validations.value[index],
                   );
@@ -91,13 +91,13 @@ class HomePage extends StatelessWidget {
 }
 
 class NumberBlocks extends StatelessWidget {
-  String newNumber;
+  String number;
   bool isActive;
   Widget validations;
 
   NumberBlocks(
       {Key? key,
-      required this.newNumber,
+      required this.number,
       required this.isActive,
       required this.validations})
       : super(key: key);
@@ -110,19 +110,19 @@ class NumberBlocks extends StatelessWidget {
       child: Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           ScrolWheelNumber(
-            number: newNumber[0],
+            number: number[0],
             selectedColor: fontColor,
             fontSize: 40,
           ),
           const SizedBox(width: 10),
           ScrolWheelNumber(
-            number: newNumber[1],
+            number: number[1],
             selectedColor: fontColor,
             fontSize: 40,
           ),
           const SizedBox(width: 10),
           ScrolWheelNumber(
-            number: newNumber[2],
+            number: number[2],
             selectedColor: fontColor,
             fontSize: 40,
           ),
