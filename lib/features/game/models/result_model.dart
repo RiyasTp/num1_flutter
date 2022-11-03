@@ -15,6 +15,8 @@ class Result {
 
   @override
   String toString() {
+    var arr =[1,2];
+    arr.insert(0, 10);
     return 'you entered $playedNumber \nstatus: $status, \nnumber :${number ?? {
           'unknown'
         }} \nwrongPlace: $wrongPlace , \ncorrectPlace: $correctPlace ';

@@ -80,6 +80,7 @@ class GameProvider extends ChangeNotifier {
       return;
     }
   }
+  
 
   void onResetGame() {
     lastInput = '000';

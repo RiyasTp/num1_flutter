@@ -24,7 +24,6 @@ class Game {
   }
 
   void incrementTries() {
-    print(_tries);
     _tries++;
   }
 
@@ -56,7 +55,6 @@ class Game {
     var digits = List.generate(10, (i) => i);
     digits.shuffle();
     _num1 = digits.sublist(0, 3).join();
-    print(_num1);
   }
 
   String _getRandomInt(int length) {
