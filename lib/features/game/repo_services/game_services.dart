@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:num1/features/game/models/game_model.dart';
 import 'package:num1/features/game/models/result_model.dart';
 
@@ -43,5 +45,17 @@ class GameServices {
       wrongPlace: wrongPlace,
       correctPlace: correctPlace,
     );
+  }
+}
+
+
+void main(){
+  final g = GameServices();
+  while(g.isInGame){
+    print("Enter your number");
+    // Reading name of the Geek
+    String num = stdin.readLineSync()!;
+     print(g.getResult(num));
+
   }
 }

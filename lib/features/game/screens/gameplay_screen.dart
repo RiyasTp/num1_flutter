@@ -22,6 +22,12 @@ class GamePlayScreen extends StatelessWidget {
           IconButton(
               onPressed: () {
                 context.read<GameProvider>().onResetGame();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GamePlayScreen(),
+                  ),
+                );
               },
               icon: const Icon(Icons.restart_alt))
         ],
@@ -36,7 +42,9 @@ class GamePlayScreen extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(children: [
                   ...resultWidget,
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   context.read<GameProvider>().isGameOver
                       ? const SizedBox()
                       : Selector<GameProvider, String>(

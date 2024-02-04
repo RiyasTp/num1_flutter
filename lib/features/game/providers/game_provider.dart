@@ -83,6 +83,7 @@ class GameProvider extends ChangeNotifier {
   
 
   void onResetGame() {
+    // final navigator = Navigator()
     lastInput = '000';
     playedNumbers.clear();
     _results.clear();

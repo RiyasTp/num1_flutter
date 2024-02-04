@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:num1/features/game/models/result_model.dart';
 import 'package:num1/features/game/widgets/result_validation_widget.dart';
 import 'package:num1/features/game/widgets/game_widget_builders.dart';
-import 'package:num1/features/game/widgets/scroll_wheel_number_widget.dart';
+
 
 class ResultBlock extends StatelessWidget {
   final Result result;
