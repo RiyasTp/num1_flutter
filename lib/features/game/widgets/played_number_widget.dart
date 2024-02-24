@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 
-class ScrolWheelNumberWidget extends StatelessWidget {
+class PlayedNumberWidget extends StatelessWidget {
   final String number;
   final Color selectedColor;
   final double fontSize;
-  const ScrolWheelNumberWidget({
+  const PlayedNumberWidget({
     Key? key,
     required this.number,
-    required this.selectedColor ,
-    this.fontSize = 23,
+     this.selectedColor = Colors.black,
+    this.fontSize = 25,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(1.0),
+      padding: const EdgeInsets.all(5.0),
       child: Container(
-        padding: const EdgeInsets.fromLTRB(15.0, 0,15,8),
+        padding: const EdgeInsets.symmetric(horizontal:  15 , vertical: 5),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5.0),
-            border: Border.all(color:selectedColor,width: 2)),
+            
+            border: Border.all(color: Colors.grey.shade900 , width: 1.5)),
         child: Text(
           number.toString(),
           style: TextStyle(

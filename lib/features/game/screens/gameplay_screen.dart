@@ -16,7 +16,7 @@ class GamePlayScreen extends StatelessWidget {
       return ResultBlock(result: list[index]);
     });
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 21, 0, 48),
+      backgroundColor: Color.fromARGB(255, 240, 227, 169),
       appBar: AppBar(
         actions: [
           IconButton(
@@ -37,7 +37,6 @@ class GamePlayScreen extends StatelessWidget {
         child: Center(
             child: Column(
           children: [
-            const SizedBox(height: 20),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(children: [
@@ -56,18 +55,23 @@ class GamePlayScreen extends StatelessWidget {
                 ]),
               ),
             ),
-            const NumScrollBlock(),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: ElevatedButton(
-                child: const Text('checkNum'),
-                onPressed: () {
-                  context.read<GameProvider>().onPlayed();
-                },
-              ),
-            ),
           ],
         )),
+      ),
+      bottomNavigationBar: 
+      SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const NumScrollBlock(),
+            ElevatedButton(
+              child: const Text('checkNum'),
+              onPressed: () {
+                context.read<GameProvider>().onPlayed();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

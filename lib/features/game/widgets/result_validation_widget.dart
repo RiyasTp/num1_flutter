@@ -17,24 +17,20 @@ class ResultValidatonWidget extends StatelessWidget {
         text: TextSpan(children: [
           TextSpan(
               text: '$correctPlace',
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 0, 158, 34))),
-          const TextSpan(
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, color: Colors.green.shade700)),
+          TextSpan(
               text: ' numbers are well placed \n',
               style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 172, 172, 172))),
+                  fontWeight: FontWeight.bold, color: Colors.grey.shade900)),
           TextSpan(
               text: '$wrongPlace',
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 255, 158, 12))),
-          const TextSpan(
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, color: Colors.orange.shade700)),
+          TextSpan(
               text: '  numbers are correct but wrongly placed',
               style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 172, 172, 172))),
+                  fontWeight: FontWeight.bold, color: Colors.grey.shade900)),
         ]));
   }
 }

@@ -5,12 +5,8 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => GameProvider()),
-      ],
-      child: const MyApp(),
-    ),
+    MyApp()
+   
   );
 }
 
@@ -21,8 +17,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     context = context;
     return  MaterialApp(
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home: GamePlayScreen(), 
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          color: Colors.transparent,
+          elevation: 0
+        )
+      ),
+      home: ChangeNotifierProvider(
+        create: (_) => GameProvider(),
+        child: GamePlayScreen()), 
     );
   }
 }
