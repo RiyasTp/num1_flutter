@@ -62,6 +62,14 @@ class BingoOfflineGameProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void clearTiles(){
+    for (var tiles in lobbyTiles) {
+      tiles.tileNumber = '';
+    }
+    currentTileFillNumber =1;
+    notifyListeners();
+  }
+
   void onTilePlayed(String playedNumber) {
     _gameServices.onTilePlayed(playedNumber);
   }

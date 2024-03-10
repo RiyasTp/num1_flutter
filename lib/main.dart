@@ -26,10 +26,10 @@ class MyApp extends StatelessWidget {
           elevation: 0
         )
       ),
-      // home: const BingoGameWrapper(),
-      home: ChangeNotifierProvider(
-        create: (_) => GameProvider(),
-        child: GamePlayScreen()), 
+      home: const BingoGameWrapper(),
+      // home: ChangeNotifierProvider(
+      //   create: (_) => GameProvider(),
+      //   child: GamePlayScreen()), 
     );
   }
 }

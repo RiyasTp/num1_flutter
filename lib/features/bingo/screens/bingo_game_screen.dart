@@ -40,6 +40,13 @@ class _BingoGameScreenState extends State<BingoGameScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ElevatedButton(
+                      child: const Text('Clear'),
+                      onPressed: () {
+                        provider.clearTiles();
+                      },
+                    ),
+
+                    ElevatedButton(
                       child: const Text('Fill'),
                       onPressed: () {
                         provider.fillTiles();
